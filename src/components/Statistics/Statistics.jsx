@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 import StatisticsList from "./StatisticsList";
-import "./Statistics.css";
+import {
+  StatisticsSection,
+  StatisticsTitle,
+  StatisticList,
+} from "./Statistics.styled";
 
 export default function Statistics({ stats, title }) {
   return (
-    <section className="statistics">
-      <h2 className="title-statistic">{title}</h2>
-      <ul className="stat-list">{stats.map(StatisticsList)}</ul>
-    </section>
+    <StatisticsSection>
+      <StatisticsTitle>{title}</StatisticsTitle>
+      <StatisticList>{stats.map(StatisticsList)}</StatisticList>
+    </StatisticsSection>
   );
 }
 
