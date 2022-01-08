@@ -1,5 +1,16 @@
 import PropTypes from "prop-types";
-import "./Profile.css";
+import {
+  ProfileDiv,
+  ProfileDescription,
+  ProfileAvatar,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStats,
+  ProfileStatsItem,
+  ProfileLabel,
+  ProfileQuantity,
+} from "./Profile.styled";
 
 export default function Profile({
   user: {
@@ -11,29 +22,29 @@ export default function Profile({
   },
 }) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileDiv>
+      <ProfileDescription>
+        <ProfileAvatar src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
+      </ProfileDescription>
 
-      <ul className="stats">
-        <li className="stats-item">
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li className="stats-item">
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li className="stats-item">
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <ProfileStats>
+        <ProfileStatsItem>
+          <ProfileLabel>Followers</ProfileLabel>
+          <ProfileQuantity>{followers}</ProfileQuantity>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
+          <ProfileLabel>Views</ProfileLabel>
+          <ProfileQuantity>{views}</ProfileQuantity>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
+          <ProfileLabel>Likes</ProfileLabel>
+          <ProfileQuantity>{likes}</ProfileQuantity>
+        </ProfileStatsItem>
+      </ProfileStats>
+    </ProfileDiv>
   );
 }
 
